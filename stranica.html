@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: #C1E4E7;
+  padding: 20px;
+  float: left;
+  width: 20%; 
+}
+
+.main {
+  background-color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  width: 80%; 
+}
+
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="left">
+  
+  <select name="funkcije" onchange="if(this.selectedIndex) doSomething();">
+  <option value="1">OSM maps</option>
+  <option value="2">BING maps</option>
+  <option value="3">WMS</option>
+  <option value="4">WFS</option>
+  </select>
+  <p><b>Functions</b></p>
+  <button type="button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/OOjs_UI_icon_fullScreen.svg/1200px-OOjs_UI_icon_fullScreen.svg.png" height ="10" width="10" /></button>
+  <button type="button">Download PNG</button>
+  <button type="button">Icon Symbolizer</button>
+  <button type="button">GetFeatureInfo</button>
+  <button type="button">Measure</button>
+  <button type="button">Draw Shapes</button>
+  <button type="button">Select Features</button>
+</div>
+
+<div class="main">
+  <iframe src="https://openlayers.org/en/latest/examples/simple.html" height="500" width="100%"></iframe>
+</div>
+
+
+
+</body>
+</html>
+

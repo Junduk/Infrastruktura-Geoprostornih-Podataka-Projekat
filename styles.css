@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+.map {
+    width: 100%;
+    height: 550px;
+}
+
+.map:-webkit-full-screen {
+    height: 100%;
+    margin: 0;
+}
+
+.map:-ms-fullscreen {
+    height: 100%;
+}
+
+.map:fullscreen {
+    height: 100%;
+}
+
+.map .ol-rotate {
+    top: 3em;
+}
+
+.vis{
+    visibility: visible;
+}
+
+.invis{
+    visibility: hidden;
+}
+
+body{
+    margin:0;
+    padding: 0; 
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 40vw;
+}
+
+.sidebar{
+    margin: 15px;
+}
+
+.ol-tooltip {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    color: white;
+    padding: 4px 8px;
+    opacity: 0.7;
+    white-space: nowrap;
+    font-size: 12px;
+    cursor: default;
+    user-select: none;
+}
+
+.ol-tooltip-measure {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.ol-tooltip-static {
+    background-color: #ffcc33;
+    color: black;
+    border: 1px solid white;
+}
+
+.ol-tooltip-measure:before,
+
+.ol-tooltip-static:before {
+    border-top: 6px solid rgba(0, 0, 0, 0.5);
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    margin-left: -7px;
+    left: 50%;
+}
+
+.ol-tooltip-static:before {
+    border-top-color: #ffcc33;
+}
+
+.ol-tooltip-hidden {
+    border-top-color: #000000;
+}
+
+.bClass {
+    color: white;
+}

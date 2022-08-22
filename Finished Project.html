@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajt</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./leaflet.css" />
+    <link rel="stylesheet" href="./v6.13.0-dist/ol.css"> 
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-1">
+            <div class="sidebar">
+                <h2>Layers</h2>
+                <input id="checkPodloga1" type="checkbox" onclick="bingOSM()" name="layerCheckbox" value="podloga1" checked>OpenStreet mapa<br>
+                <input id="checkPodloga2" type="checkbox" onclick="bingOSM()" name="layerCheckbox" value="podloga2">BING mapa<br><hr/>
+                <input id="checkSelect" type="checkbox" onclick="selectFeature()" name="layerCheckbox" value="selectFeature">Select Feature<br>
+                <input id="l3" type="checkbox" name="layerCheckbox" value="buildings" onclick="layerCheckbox1()">buildings<br>
+                <input id="l4" type="checkbox" name="layerCheckbox" value="landuse" onclick="layerCheckbox2()">landuse<br>
+                <input id="l5" type="checkbox" name="layerCheckbox" value="natural" onclick="layerCheckbox3()">natural<br>
+                <input id="l6" type="checkbox" name="layerCheckbox" value="places" onclick="layerCheckbox4()">places<br>
+                <input id="l7" type="checkbox" name="layerCheckbox" value="railways" onclick="layerCheckbox5()">railways<br>
+                <input id="l8" type="checkbox" name="layerCheckbox" value="roads" onclick="layerCheckbox6()">roads<br>
+                <input id="l9" type="checkbox" name="layerCheckbox" value="waterways" onclick="layerCheckbox7()">waterways<br>
+                <h2>Functions</h2>
+                <button type="button" onclick="download()">Download PNG</button><br>
+                <a id="image-download" download="map.png"></a>
+                <button id="iconB" type="button" onclick="iconSymbolizer()">Icon Symbolizer</button><br>
+                <button id="resetIconsB" type="button" onclick="resetIcons()">Reset Icons</button><br>
+                <button id="measureB" type="button" onclick="measure()">Measure</button><br>
+                <button id="drawB" type="button" onclick="drawing()">Draw Shapes</button><br>
+                <button id="resetB" type="button" onclick="reset()">Reset Shapes</button><br>
+            </div>
+            <div id="lista1">
+                <form class="form-inline">
+                    <label for="type1">Measurement type &nbsp;</label>
+                    <select id="type1">
+                        <option value="length">Length (LineString)</option>
+                        <option value="area">Area (Polygon)</option>
+                    </select>
+                </form>
+            </div>
+            <div id="lista2">
+                <form class="form-inline">
+                    <label for="type2">Shape type: &nbsp;</label>
+                    <select id="type2">
+                      <option value="Circle">Circle</option>
+                      <option value="Square">Square</option>
+                      <option value="Box">Box</option>
+                      <option value="Star">Star</option>
+                      <option value="None">None</option>
+                    </select>
+                  </form>
+            </div>
+        </div>
+        <div class="grid-2">
+            <div id="map" class="map">
+                <span id="status">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <script src="./leaflet.js"></script>
+    <script src="./v6.13.0-dist/ol.js"></script>
+    <script src="./sajt.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Map</title>
+    <style>
+      .map {
+        width: 100%;
+        height: 400px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: #FFFFFF;
+      }
+
+      .header {
+        background-color: #e7c9c1;
+        padding: 10px;
+        height: 20%;
+        width: 100%; 
+      }
+
+      .column {
+        float: left;
+        padding: 10px;
+        height: 100%;
+      }
+
+      .column.first {
+        width: 20%;
+        background-color: #C1E4E7;
+        padding: 10px;
+        height: 100%;
+      }
+
+      .column.second {
+        width: 80%;
+      }
+
+      .row {
+        content: "";
+        display: table;
+        clear: both;
+        height: 100%;
+      }
+
+      .footer {
+        background-color: #f1f1f1;
+        padding: 10px;
+        height: 10%;
+        width: 100%; 
+      }
+
+      .grid-container{
+        display: grid;
+        grid-template-columns: 20vw 80vw;
+        grid-template-rows: 100vh;
+      }
+
+      .sidebar{
+        margin-left: 15px;
+      }
+
+      /* Use a media query to add a break point at 800px: */
+      @media screen and (max-width: 800px) {
+        .left, .main, .right {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./layerSwitcher.css">
+    <link rel="stylesheet" href="./v6.13.0-dist/ol.css" type="text/css">
+  </head>
+  
+  <body>
+    <div class="header">
+      <a href="https://www.Google.com" target="panel">Gooooooooogle!</a> 
+
+      <!-- <iframe name="panel" srcdoc="C:\Users\korisnik\Desktop\IGP projekat\main.js" title="Panel">
+        
+      </iframe> -->
+    </div>
+
+    <div class="row">
+      <div class="column first">
+        <select name="funkcije" onchange="if(this.selectedIndex) doSomething();">
+          <option value="1">OSM maps</option>
+          <option value="2">BING maps</option>
+          <option value="3">WMS</option>
+          <option value="4">WFS</option>
+        </select>
+        <p><b>Functions</b></p>
+        <button type="button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/OOjs_UI_icon_fullScreen.svg/1200px-OOjs_UI_icon_fullScreen.svg.png" height ="10" width="10" /></button>
+        <button type="button">Download PNG</button>
+        <button type="button">Icon Symbolizer</button>
+        <button type="button">GetFeatureInfo</button>
+        <!--let port = location.port; preuzmi port sa linka dokumenta i postavi ga na link za button sljedeci!-->
+        <button type="button" onclick="window.location.href='http://localhost:8000/Desktop/IGP%20projekat/measure.html'">Measure</button>
+        <button type="button" onclick="window.location.href='http://localhost:8000/Desktop/IGP%20projekat/draw.html'">Draw Shapes</button>
+        <button type="button">Select Features</button>
+        <button type="button" onclick="window.location.href='http://localhost:8000/Desktop/IGP%20projekat/wms.html'">WMS</button>
+        <button type="button" onclick="window.location.href='http://localhost:8000/Desktop/IGP%20projekat/layerSwitcher.html'">Layer Switcher</button>
+      </div>
+
+      <div class="column second">
+        <script src="./v6.13.0-dist/ol.js"></script>
+        <script src="./biing.js"></script>
+        <div id="map" class="map"></div>
+      </div>
+    </div>
+    
+    <div class="grid-container">
+      <div class="grid-1">
+        <div class="sidebar">
+          <h2>Base layer</h2>
+          <input type="radio" name="baseLayerRadioButton" value="OSMStandard" checked>OSM Standard<br>
+          <input type="radio" name="baseLayerRadioButton" value="OSMHumanitarian">OSM Humanitarian<br>
+          <input type="radio" name="baseLayerRadioButton" value="StamenTerrain">OSM Terrain<br>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© Galina Balać © Dejan Kuzmanović</p>
+    </div>
+  </body>
+</html>
